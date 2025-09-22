@@ -1,0 +1,75 @@
+Key Points
+
+    There are many expansion boards for the Raspberry Pi Pico, offering various add-ons for projects.
+    Research suggests popular options include GPIO expanders, displays, and robotics platforms.
+    It seems likely that boards like Pimoroni Pico Display and Cytron Robo Pico are widely used for their versatility.
+
+Expansion Boards Overview
+
+The Raspberry Pi Pico supports a range of expansion boards that enhance its functionality for different projects. These boards can add features like additional GPIO pins, displays, sensors, and connectivity options, making it easier to build complex systems.
+Popular Add-Ons
+
+Some notable expansion boards include:
+
+    GPIO Expansion Boards: Such as the Raspberry Pi Pico GPIO Expansion Board from The Pi Hut, which breaks out pins for easy connection.
+    Display Add-Ons: Like the Pimoroni Pico Display, offering a 1.14-inch LCD screen for visual interfaces.
+    Robotics Platforms: Such as the Cytron Robo Pico, designed for robotics with motor terminals and sensors.
+
+An unexpected detail is that some boards, like the Pimoroni Clipper 4G LTE, enable cellular connectivity, which is not commonly associated with microcontrollers but can be useful for IoT projects.
+Survey Note: Comprehensive Analysis of Raspberry Pi Pico Expansion Boards
+
+This section provides a detailed examination of expansion boards and add-ons compatible with the Raspberry Pi Pico, catering to a wide array of project needs. The Raspberry Pi Pico, introduced as a microcontroller board by Raspberry Pi, features the RP2040 chip and is programmable in C and MicroPython, making it versatile for physical computing. Expansion boards enhance its capabilities, and this analysis draws from various sources to ensure a thorough understanding.
+Background and Context
+
+The Raspberry Pi Pico, launched in January 2021, has gained popularity due to its affordability and the RP2040 chip's availability, even during chip shortages. It supports a rich peripheral set, including SPI, I2C, and Programmable I/O (PIO), which facilitates connections to external hardware. Expansion boards, often referred to as shields or HATs in similar ecosystems, are designed to stack on or connect to the Pico, providing additional functionality without requiring extensive soldering.
+Types of Expansion Boards
+
+Expansion boards for the Raspberry Pi Pico vary widely, addressing needs from basic GPIO access to advanced applications like robotics and cellular connectivity. Below is a detailed list, categorized by function, based on recent research from technology review sites and manufacturer pages.
+GPIO Expansion and Prototyping
+
+    Raspberry Pi Pico GPIO Expansion Board (The Pi Hut): Breaks out all pins and power to male and female headers, allowing easy connection of components and add-ons. It includes mounting holes for secure project integration and supports jumper wires for flexibility. Notes indicate the Pico needs male headers soldered for compatibility.
+    PTSolns Raspberry Pi Pico Expansion Board (Pico Base + Proto) (PTSolns): Offers external power input, QWIIC connector, and dual I2C busses (3.3V and 5V), with a prototyping area. It comes with headers and has a datasheet and GitHub tutorials for Arduino IDE, enhancing prototyping capabilities.
+    Red Robotics Pico 2 Pi (Tom's Hardware): Breaks out GPIO to a 40-pin layout, enabling compatibility with Raspberry Pi HATs and pHATs, which is unexpected for a microcontroller but useful for leveraging existing add-ons.
+
+Display and Input Devices
+
+    Pimoroni Pico Display (Tom's Hardware): Features a 1.14-inch 240x135 pixel IPS LCD screen, four pushbuttons, and an RGB LED, ideal for projects requiring visual interfaces. This add-on is particularly useful for user interaction in small form factors.
+    Pimoroni Pico RGB Keypad (Tom's Hardware): Offers 16 inputs with RGB LEDs each, suitable for creating custom input devices like a Stream Deck, enhancing user interface capabilities.
+
+Sensor and Learning Kits
+
+    Uctronics TinyML Learning Kit (Tom's Hardware): Includes a 2MP SPI camera for basic image recognition and supports TinyML, an unexpected feature for microcontrollers, enabling machine learning applications.
+    Cytron Edu Pico (Tom's Hardware): A pre-wired learning platform with components, hint cards, and a reference guide, designed for educational purposes, making it accessible for beginners.
+
+Robotics and Motor Control
+
+    Elecfreaks WuKong 2040 (Tom's Hardware): Lego-compatible, with onboard battery support, RGB LEDs, a buzzer, and four motor terminals, ideal for robotics and educational projects, offering a comprehensive platform for motor control.
+    Cytron Robo Pico (Tom's Hardware): A robotics platform with LEDs, NeoPixels, buttons, a buzzer, motor terminal, Grove, and Maker Port, designed for building robotic projects, enhancing motor and sensor integration.
+
+Connectivity and Advanced Features
+
+    Pimoroni Clipper 4G LTE (Tom's Hardware): Enables cellular connectivity for online access without Wi-Fi, an unexpected feature for a microcontroller, useful for IoT projects requiring remote communication.
+    Seeed Grove Shield (Tom's Hardware): Provides Grove connectors for easy project building, compatible with a wide range of Grove components, simplifying sensor and actuator connections.
+
+Multi-Function Kits
+
+    Cytron Maker Pi Pico (Tom's Hardware): A complete learning platform with an embedded Pico, microSD slot, audio capabilities, and Grove connectors, offering a versatile setup for prototyping and learning.
+    Waveshare Raspberry Pi Pico Evaluation Kit (Type B) (Waveshare): Includes a 1.14" LCD display, IMU sensor with ICM20948 (3-axis gyroscope, accelerometer, magnetometer) and LPS22HB barometric pressure sensor, and a GPIO expander, with demo code for GPIO, PWM, I2C, SPI, suitable for environment sensing and prototyping.
+
+Comparative Analysis
+
+To aid in selection, the following table compares key features of selected expansion boards, based on available data:
+Board Name	Price	Primary Function	Notable Features	Compatibility Notes
+Raspberry Pi Pico GPIO Expansion Board	-	GPIO Expansion	Breaks out pins, mounting holes, jumper wire support	Requires soldered headers on Pico
+Pimoroni Pico Display	-	Display	1.14" IPS LCD, pushbuttons, RGB LED	Blocks some GPIO, ideal for UI projects
+Cytron Robo Pico	$15	Robotics	LEDs, NeoPixels, motor terminals, Grove connectors	Robotics-focused, comprehensive setup
+Pimoroni Clipper 4G LTE	-	Connectivity	Cellular connectivity, no Wi-Fi needed	For IoT, unexpected for microcontrollers
+Uctronics TinyML Learning Kit	-	Machine Learning	2MP SPI camera, TinyML support	For image recognition, advanced feature
+
+(Note: Prices marked "-" were not specified in the sources.)
+Usage Considerations
+
+When choosing an expansion board, consider the project's requirements, such as whether you need additional GPIO access, a display for user interaction, or specific sensors for data collection. Some boards, like the Pimoroni Pico Unicorn, block GPIO access, which may limit other add-ons, while others, like the Red Robotics Pico 2 Pi, enable HAT compatibility, expanding possibilities. For educational purposes, kits like Cytron Edu Pico provide guided learning, while for advanced IoT, the Pimoroni Clipper 4G LTE offers cellular connectivity, which is less common but highly valuable for remote projects.
+Conclusion
+
+The Raspberry Pi Pico's ecosystem includes a diverse range of expansion boards, from basic GPIO expanders to advanced robotics and connectivity options. This survey note, informed by recent technology reviews and manufacturer details, ensures a comprehensive understanding, helping users select the right board for their needs. For further details, refer to the cited sources for product specifications and reviews.
