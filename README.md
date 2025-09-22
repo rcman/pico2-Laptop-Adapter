@@ -9,4 +9,13 @@ The original one was done with the Teensy board but I'm using a Pico2 which is a
 <BR>
 <BR> I've included the code to program the Pico 2 and this is a work in progress.
 
+<BR><BR>
+
+
+![FMJSFTHLPPHSOUU](https://github.com/user-attachments/assets/11e289c4-842f-4cf1-8543-314a4bbfff0b)
+
 <BR>
+originally designed for the Teensy but now takes the Pico2
+
+<BR>
+
