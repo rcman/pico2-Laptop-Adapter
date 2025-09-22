@@ -1,0 +1,109 @@
+# Raspberry Pi Pico HDMI Adapter - Hardware Guide
+
+## Overview
+
+The Raspberry Pi Pico doesn't have native HDMI output capabilities, but we can create a DPI (Display Parallel Interface) signal that can be converted to HDMI using additional hardware. This guide explains the hardware requirements and connection details.
+
+## Hardware Requirements
+
+### Core Components:
+1. Raspberry Pi Pico or Pico W
+2. DPI to HDMI converter board (options below)
+3. Breadboard and jumper wires
+4. HDMI cable and display
+
+### DPI to HDMI Converter Options:
+
+#### Option 1: Use a TFP410 Breakout Board
+The Texas Instruments TFP410 is a common DPI to HDMI converter chip. You can find breakout boards like:
+- [Adafruit DPI TFP410 Breakout](https://www.adafruit.com/product/2219) or similar
+
+#### Option 2: Build a Custom Circuit
+You can build your own converter using:
+- TI TFP410 or ADV7513 chip
+- Required passive components (resistors, capacitors)
+- HDMI connector
+- PCB or prototyping board
+
+#### Option 3: Repurpose a Raspberry Pi HAT
+Some users have successfully repurposed:
+- [Adafruit DPI TFT Kippah](https://www.adafruit.com/product/2453)
+- Raspberry Pi DSI to HDMI adapters (with modifications)
+
+## Connection Diagram
+
+```
+Raspberry Pi Pico           DPI to HDMI Converter
++----------------+          +-------------------+
+|                |          |                   |
+| GPIO2  --------|--------> | R0                |
+| GPIO3  --------|--------> | R1                |
+| GPIO4  --------|--------> | R2                |
+|                |          |                   |
+| GPIO5  --------|--------> | G0                |
+| GPIO6  --------|--------> | G1                |
+| GPIO7  --------|--------> | G2                |
+|                |          |                   |
+| GPIO8  --------|--------> | B0                |
+| GPIO9  --------|--------> | B1                |
+|                |          |                   |
+| GPIO10 --------|--------> | HSYNC             |
+| GPIO11 --------|--------> | VSYNC             |
+| GPIO12 --------|--------> | PCLK (Pixel Clock)|
+|                |          |                   |
+| GND    --------|--------> | GND               |
+| 3.3V   --------|--------> | 3.3V (if needed)  |
++----------------+          +-------------------+
+                                      |
+                                      v
+                                  HDMI Display
+```
+
+## Implementation Notes
+
+### Limitations
+
+1. **Color Depth**: This implementation uses 8 bits total (3R, 3G, 2B) for color, providing 256 colors.
+2. **Resolution**: The code is configured for 640x480 @ 60Hz (VGA resolution).
+3. **Performance**: The Pico's PIO blocks are fast but have limited memory, restricting complexity.
+
+### Power Considerations
+
+Most DPI to HDMI converters require a 3.3V power source. The Pico can provide 3.3V but with limited current. For reliable operation:
+
+1. Power your Pico with a good quality 5V power supply
+2. Consider a separate power source for the converter board if needed
+
+### Signal Integrity
+
+For reliable HDMI signals:
+1. Keep wires as short as possible
+2. Use a ground plane or multiple ground connections
+3. Consider adding small series resistors (33-75 ohm) to signal lines for impedance matching
+
+## Customization Options
+
+### Increasing Resolution
+The current code implements 640x480 @ 60Hz. To increase resolution:
+1. Adjust the timing parameters (WIDTH, HEIGHT, porch and sync values)
+2. You'll need more GPIO pins for higher color depth
+3. Higher resolutions may require faster pixel clock rates
+
+### Adding Audio
+HDMI supports audio, but this would require:
+1. Additional hardware (I2S to HDMI audio encoder)
+2. More complex converter board
+3. Extra code to generate audio data
+
+## Troubleshooting
+
+If your display shows no signal:
+1. Verify all connections and power
+2. Check if your display supports the 640x480@60Hz mode
+3. Try adjusting the pixel clock timing
+4. Ensure the converter board is properly configured
+
+If the image is distorted:
+1. Check for proper sync signal timing
+2. Verify the color bit mapping
+3. Look for noise/interference in your wiring
