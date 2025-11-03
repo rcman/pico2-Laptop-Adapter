@@ -12,6 +12,11 @@ The original one was done with the Teensy board but I'm using a Pico2 which is a
 <BR><BR>
 originally designed for the Teensy but now takes the Pico2
 
+<BR>
+The Code includes python code for the keyboard editor, keyboard layout
+
+<BR>
+
 ![FMJSFTHLPPHSOUU](https://github.com/user-attachments/assets/11e289c4-842f-4cf1-8543-314a4bbfff0b)
 
 <BR>
